@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+    content="width=device-width"
+    initial-scale=1.0>
+    <title>Nova-k2b</title>
+    <link rel="stylesheet" href="aff.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--header / Navigation-->
+    <header>
+         <div class="logo">Nova-<span class="k2b">k2b</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#Service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="audio">
+        <audio autoplay loop>
+            <source src="Tiakola - Manon B feat. Ryflo, Oskoow & MC Cebezinho (Clip officiel).mp3" type="audio/mpeg">
+             Votre navigateur ne supporte pas l'audio.
+        </audio>
+        <button id="audiocontrol">🔊</button>
+    </section>
+        
+    <!--Section d'introduction-->
+    <section class="hero">
+        
+        <p>Affiches publicitaires – Faites parler votre marque
+            Une bonne affiche, c’est un message qui capte l’attention dès le premier regard. Chez Nova-k2b, nous créons des affiches personnalisées
+            <br>qui allient design percutant, couleurs attractives et clarté visuelle. Que ce soit pour promouvoir un événement, lancer un produit,
+            <br>valoriser votre entreprise ou informer votre public, nous vous accompagnons dans la création d’un visuel fort, adapté à vos besoins. 
+            <br>Formats variés, styles modernes, impression nette et professionnelle : donnez de l’impact à votre communication avec des affiches 
+            <br>qui ne passent pas inaperçues.</p>
+    </section>
+
+    <!--Nos services-->
+    
+    <section class="Services">
+        <h3 class="titre-service">Nos services</h3>>
+    </section>
+    
+    <section class="vos-pull">
+        <h3 class="tit">Vos affiches</h3>
+    </section>
+        
+    <section class="carte-container">
+        <div class="carte">
+            <a href="aff1.jpg"><img src="aff1.jpg" alt="t-shirt personnalisé"></a>
+        </div>
+
+        <div class="carte">
+            <a href="aff2.jpg"><img src="aff2.jpg" alt="t-shirt personnalisé"></a>
+        </div>
+
+        <div class="carte">
+            <a href="aff3.jpg"><img src="aff3.jpg" alt="t-shirt personnalisé"></a>
+        </div>
+
+        <div class="carte">
+            <a href="aff4.jpg"><img src="aff4.jpg" alt="t-shirt personnalisé"></a>
+        </div>
+
+        <div class="carte">
+            <a href="aff5.jpg"><img src="aff5.jpg" alt="t-shirt personnalisé"></a>
+        </div>
+
+        <div class="carte">
+            <a href="aff6.jpg"><img src="aff6.jpg" alt="t-shirt personnalisé"></a>
+        </div>
+
+        <div class="carte">
+            <a href="aff7.jpg"><img src="aff7.jpg" alt="t-shirt personnalisé"></a>
+        </div>
+
+        <div class="carte">
+            <a href="aff8.jpg"><img src="aff8.jpg" alt="t-shirt personnalisé"></a>
+        </div>
+
+        
+    </section>
+
+    <!--Section Contact-->
+    <footer id="contact">
+        <p>Contactez-nous :</p>
+        <p>Email: <a href="borisagboka22@gmail.com">borisagboka22@gmail.com</a></p>
+        <p>WhatsApp & Telephone : <a href="tel: +22890559568">90559568</a></p>
+    </footer>
+
+     <a href="https://wa.me/22890559568" class="whatsapp" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
+    </a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.fade-scroll');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+        });
+    });
+elements.forEach(el => observer.observe(el));
+  });
+
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  const audio = document.querySelector('audio');
+  const button = document.getElementById('audiocontrol');
+
+  // Fonction pour démarrer l'audio
+  const startAudio = () => {
+    audio.play().catch(() => {});
+    document.removeEventListener('click', startAudio);
+    document.removeEventListener('scroll', startAudio);
+  };
+
+  // Lancer au clic ou scroll
+  document.addEventListener('click', startAudio);
+  document.addEventListener('scroll', startAudio);
+
+  // Bouton pause/play
+  button.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      button.textContent = '🔊';
+    } else {
+      audio.pause();
+      button.textContent = '🔇';
+    }
+  });
+
+
+</script>
+
+
+
+</body>
+</html> 

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+    content="width=device-width"
+    initial-scale=1.0>
+    <title>Nova-k2b</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!--header / Navigation-->
+    <section class="im1">
+        <header>
+            <h1>Nova-<span class="k2b">k2b</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <section class="audio">
+        <audio autoplay loop>
+            <source src="trenches_man_ibuchim_drill_feat._dells_tmx_mp3_2763.mp3" type="audio/mpeg">
+             Votre navigateur ne supporte pas l'audio.
+        </audio>
+        <button id="audiocontrol">🔊</button>
+    </section>
+
+    
+        <!--Section d'introduction-->
+        <section class="hero">
+            <h2>Bienvenue sur le site officiel de Nova-k2b</h2>
+            <p>L'empreinte creative au service de votre image</p>
+        </section>
+        <section class="descriptive">
+            <p>Nova-k2b, c’est plus qu’une marque : c’est une communauté de passionnés de style et d’originalité. 
+                <br>Chaque t-shirt et Pull-over raconte une histoire, envoie un message ou partage un univers. C’est l’outil parfait pour créer du lien, 
+                <br>déclencher un sourire, attirer l’attention. Tu veux faire partie de ceux qui osent s’exprimer différemment ? 
+                <br>Tu es au bon endroit.</p>
+        </section>
+    <!--Nos services-->
+    
+    <section class="Services">
+        <div id="Service">
+            <h3 class="titre-service">Nos services</h3>
+        </div>
+    </section>
+
+    <section class="invite">
+        <h3>Cliquez sur l'article désiré pour découvrir nos modèles et personnalisez le votre dès maintenant !</h3>
+    </section>
+
+    <section class="carte-container">
+        <div class="carte">
+            <div class="image-box">
+                <a href="pull.html"><img src="pull7.jpg" alt="Pull-over personnalisé"></a>
+            </div>
+            <div class="carte-info">
+                <a href="pull.html"><h4>Pull personnalisé</h4></a>
+                <p>Disponible en plusieurs tailles</p>
+            
+                <div class="details">
+                    <span>👕 </span>
+                    <span>🎨 <p>couleurs</p></span>
+                    <span>📦 <p>Livraison rapide</p></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="carte">
+            <div class="image-box">
+                <a href="t_h.html"><img src="pull.jpg" alt="T-shirt personnalisé"></a>
+            </div>
+            <div class="carte-info">
+                <a href="t_h.html"><h4>T-shirt personnalisé</h4></a>
+                <p>Disponible en plusieurs tailles</p>
+            
+                <div class="details">
+                    <span>👕 </span>
+                    <span>🎨 <p>couleurs</p></span>
+                    <span>📦 <p>Livraison rapide</p></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="carte">
+            <div class="image-box">
+                <a href="aff.html"><img src="NOVA4.png" alt="Affiches publicitaires"></a>
+            </div>
+            <div class="carte-info">
+                <a href="aff.html"><h4>Affiche pub</h4></a>
+            
+                <div class="details">
+                    <span> 🏖</span>
+                    <span>🎨 <p>couleurs</p></span>
+                    <span>📦 <p>Livraison rapide</p></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="thanks">
+        <h3>Merci de votre visite sur Nova-k2b.
+            Chaque création que nous réalisons est pensée pour refléter votre identité, vos idées et votre originalité. 
+            <br>Que ce soit pour un t-shirt, un pull-over ou une affiche, nous mettons notre passion et notre savoir-faire au service de 
+            <br>votre vision. N’hésitez pas à nous contacter pour toute commande, collaboration ou simple question. 
+            <br>Exprimez-vous autrement, avec style – et laissez Nova-k2b donner vie à vos inspirations.</h3>
+    </section>
+
+    <!--Section Contact-->
+    <footer id="contact">
+        <p>Contactez-nous :</p>
+        <p>Email: <a href="borisagboka22@gmail.com">borisagboka22@gmail.com</a></p>
+        <p>WhatsApp & Telephone : <a href="tel: +22890559568">90559568</a></p>
+    </footer>
+
+    <a href="https://wa.me/22890559568" class="whatsapp" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
+    </a>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.fade-scroll');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+        });
+    });
+elements.forEach(el => observer.observe(el));
+  });
+
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  const audio = document.querySelector('audio');
+  const button = document.getElementById('audiocontrol');
+
+  // Fonction pour démarrer l'audio
+  const startAudio = () => {
+    audio.play().catch(() => {});
+    document.removeEventListener('click', startAudio);
+    document.removeEventListener('scroll', startAudio);
+  };
+
+  // Lancer au clic ou scroll
+  document.addEventListener('click', startAudio);
+  document.addEventListener('scroll', startAudio);
+
+  // Bouton pause/play
+  button.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      button.textContent = '🔊';
+    } else {
+      audio.pause();
+      button.textContent = '🔇';
+    }
+  });
+
+</script>
+
+
+
+</body>
+</html>

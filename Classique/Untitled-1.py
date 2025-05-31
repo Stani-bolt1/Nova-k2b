@@ -1,0 +1,1 @@
+print("le calcul de 2*3="2*3);
